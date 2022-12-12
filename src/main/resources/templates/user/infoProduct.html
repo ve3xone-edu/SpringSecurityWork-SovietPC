@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/index_style.css}">
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet"
+          integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="shortcut icon" th:href="@{/img/soviet.png}" type="image/x-icon">
+    <title>Информация о товаре</title>
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+</head>
+<body>
+<div class="general_div">
+    <!--/*@thymesVar id="getTitle" type=""*/-->
+    <!--/*@thymesVar id="product" type=""*/-->
+    <p th:text="'Наименование: ' + ${product.getTitle()}"></p>
+    <!--/*@thymesVar id="getDescription" type=""*/-->
+    <!--/*@thymesVar id="product" type=""*/-->
+    <p th:text="'Описание: ' + ${product.getDescription()}"></p>
+    <!--/*@thymesVar id="getPrice" type=""*/-->
+    <!--/*@thymesVar id="product" type=""*/-->
+    <p th:text="'Цена: ' + ${product.getPrice()}"></p>
+    <!--/*@thymesVar id="getWarehouse" type=""*/-->
+    <!--/*@thymesVar id="product" type=""*/-->
+    <p th:text="'Склад: ' + ${product.getWarehouse()}"></p>
+    <!--/*@thymesVar id="getSeller" type=""*/-->
+    <!--/*@thymesVar id="product" type=""*/-->
+    <p th:text="'Продавец: ' + ${product.getSeller()}"></p>
+    <!--/*@thymesVar id="getName" type=""*/-->
+    <!--/*@thymesVar id="getCategory" type=""*/-->
+    <!--/*@thymesVar id="product" type=""*/-->
+    <p th:text="'Категория: ' + ${product.getCategory().getName()}"></p>
+    <!--/*@thymesVar id="getImageList" type=""*/-->
+    <!--/*@thymesVar id="product" type=""*/-->
+    <div th:each="img : ${product.getImageList()}">
+        <!--/*@thymesVar id="getFileName" type=""*/-->
+        <!--/*@thymesVar id="img" type=""*/-->
+        <img th:src="'/img/' + ${img.getFileName()}" width="300px">
+    </div>
+    <div class="container">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+            <p class="col-md-4 mb-0 text-muted">© 2022 SovietPC</p>
+            <ul class="nav col-md-4 justify-content-end">
+                <li class="nav-item"><a href="/auth/index1" class="nav-link px-2 text-muted">Главная</a></li>
+                <li class="nav-item"><a href="/product" class="nav-link px-2 text-muted">Каталог</a></li>
+                <li class="nav-item"><a href="/auth/about" class="nav-link px-2 text-muted">Новости</a></li>
+                <li class="nav-item"><a href="/auth/login" class="nav-link px-2 text-muted">Авторизация</a></li>
+            </ul>
+        </footer>
+    </div>
+
+</div>
+</body>
+</html>
